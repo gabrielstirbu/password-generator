@@ -95,8 +95,8 @@ function getPasswordOptions() {
   //Validate length
   //isNaN(length) checks that the use enter a valid number for the password length
   if (isNaN(length) || length < 8 || length > 128) {
-    alert("Please enter a valid password length.");
-    return;
+    alert("Please enter a valid password length between 8 and 128 characters.");
+    return; // exit if the function has no character selected
   }
 
 
@@ -121,18 +121,35 @@ function getPasswordOptions() {
     includeSpecial: includeSpecial,
   };
 
-  return passwordOptions;
+  return passwordOptions; // return user choices
 }
 
 // Function for getting a random element from an array
-function getRandom(arr) {
-  var randomIndex = Math.floor(Math.random() * arr.length);
-  return arr[randomIndex];
+function passRandom(arr) {
+  // Generate a random index 
+  var randomPass = Math.floor(Math.random() * arr.length);
+  return arr[randomPass];
 }
 
 // Function to generate password with user input
 function generatePassword() {
 
+  var options = getPasswordOptions(); // call the function in order to prompt the message
+  // Check if the user cancels the prompt in order to return and avoid undefined 
+  if (!options) return;
+
+  var characters = [];
+  if (options.includeLowercase) characters = characters.concat(lowerCasedCharacters);
+  if (options.includeUppercase) characters = characters.concat(upperCasedCharacters);
+  if (options.includeNumeric) characters = characters.concat(numericCharacters);
+  if (options.includeSpecial) characters = characters.concat(specialCharacters);
+
+  var password = "";
+  for (var j = 0; j < options.length; j++) {
+    password = password + passRandom(characters);
+  }
+
+  return password; // Return the generated password
 }
 
 // Get references to the #generate element
