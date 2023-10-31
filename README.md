@@ -3,8 +3,11 @@
 Password generator that runs in the browser and features dynamically updated HTML and CSS, all powered by JavaScript.
 
 ## Pseudocode on how to resolve the challenge: 
+![image](https://github.com/gabrielstirbu/password-generator/assets/145403373/0c2c85c2-0b23-496c-821d-0a1ba0edb090)
 
 ## Features
+![image](https://github.com/gabrielstirbu/password-generator/assets/145403373/1eff1271-ec83-47f3-aff7-733c83d7ff8f)
+![image](https://github.com/gabrielstirbu/password-generator/assets/145403373/97d7cdb1-e2c8-4b20-8558-a200f537453d)
 
 - Password length selection between 8 and 128 characters.
 - Character type:
@@ -14,6 +17,8 @@ Password generator that runs in the browser and features dynamically updated HTM
 - Special characters (e.g., @, %, *, etc.).
 - Validation to ensure at least one character type is selected.
 - Random password generation.
+![image](https://github.com/gabrielstirbu/password-generator/assets/145403373/efc0e4ea-3f34-45d0-a3c3-89575d740253)
+![image](https://github.com/gabrielstirbu/password-generator/assets/145403373/a6f09b6f-5650-496f-969d-570f0fa555df)
 
 ## How to Use
 
