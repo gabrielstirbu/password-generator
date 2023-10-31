@@ -97,18 +97,30 @@ function getPasswordOptions() {
     alert("Please enter a valid password length.");
     return;
   }
-}
 
-//Password options have been created
-var includeLowercase = confirm("Include lowercase characters?");
-var includeUppercase = confirm("Include uppercase characters?");
-var includeNumeric = confirm("Include numeric characters?");
-var includeSpecial = confirm("Include special characters?");
 
-//At least one special type to be selected
-if (!includeLowercase && !includeUppercase && !includeNumeric && !includeSpecial) {
-  alert("You must select at least one character type.");
-  return;
+  //Password options have been created
+  var includeLowercase = confirm("Include lowercase characters?");
+  var includeUppercase = confirm("Include uppercase characters?");
+  var includeNumeric = confirm("Include numeric characters?");
+  var includeSpecial = confirm("Include special characters?");
+
+  //At least one special type to be selected
+  if (!includeLowercase && !includeUppercase && !includeNumeric && !includeSpecial) {
+    alert("You must select at least one character type.");
+    return;
+  }
+
+  //Object to store the user's choices
+  var passwordOptions = {
+    length: length,
+    includeLowercase: includeLowercase,
+    includeUppercase: includeUppercase,
+    includeNumeric: includeNumeric,
+    includeSpecial: includeSpecial,
+  };
+
+  return passwordOptions;
 }
 
 // Function for getting a random element from an array
